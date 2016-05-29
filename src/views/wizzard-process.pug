@@ -19,17 +19,23 @@ body
 					a(class="visible-xs" href="#")
 			div.modContent
 				div.panels
-					div(class=["panel", "active"])
-						div.item
-							div.indicator
-								span.text Item1 Text
-							div.content
-								h3.title Item1 Title
-								p Item1 Text
-								a(class=["btn", "btn-primary"], href="#item1-link-url") Item1 Link Text
-							div.aside
-								div(class="imageBG", style="background-image:url('img/item1-background.jpg')")
-									span.sr-only Item1 Description
+					each step in [["Item1 Title", "Item1 Text", "Item1 Link Text", "#item1-link-url", "img/item1-background.jpg", "Item1 Description"], ["Item2 Title", "Item2 Text", "Item2 Link Text", "#item2-link-url", "img/item2-background.jpg", "Item2 Description"]]
+						div(class=["panel", "active"])
+							div.item
+								div.indicator
+									span.text= step[1]
+								div.content
+									h3.title= step[0]
+									p= step[0]
+									a(class=["btn", "btn-primary"], href=step[3])= step[2]
+								div.aside
+									div(class="imageBG", style="background-image:url('"+step[4]+")")
+										span.sr-only= step[5]
+				div.tabs
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<span class="indicator hasNext">1</span>
+
 	script(src="js/jquery.min.js")
 	script window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
 	script(src="js/bootstrap.min.js")
