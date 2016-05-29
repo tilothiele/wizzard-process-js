@@ -1,0 +1,35 @@
+doctype transitional
+html(lang="de")
+head
+	title Standard Bootstrap Layout
+	mata(http-equiv='X-UA-Compatible', content='IE=edge')
+	link(href="../node_modules/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+	link(href="../../assets/css/ie10-viewport-bug-workaround.css", rel="stylesheet")
+	link(href="style.css", rel="stylesheet")
+	script(src="../../assets/js/ie-emulation-modes-warning.js")
+	script(type='text/javascript').
+		if (foo) bar(1 + 5)
+      
+body
+	div(class=["callouts", "timelineCallouts"])
+		div.container
+			div.modHead
+				h2.title
+					span.hidden-xs BIG Title
+					a(class="visible-xs" href="#")
+			div.modContent
+				div.panels
+					div(class=["panel", "active"])
+						div.item
+							div.indicator
+								span.text Item1 Text
+							div.content
+								h3.title Item1 Title
+								p Item1 Text
+								a(class=["btn", "btn-primary"], href="#item1-link-url") Item1 Link Text
+							div.aside
+								div(class="imageBG", style="background-image:url('img/item1-background.jpg')")
+									span.sr-only Item1 Description
+	script(src="js/jquery.min.js")
+	script window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+	script(src="js/bootstrap.min.js")

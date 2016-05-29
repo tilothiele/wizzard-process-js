@@ -1,0 +1,331 @@
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.timelineCallouts {
+    background: rgba(0, 0, 0, 0) url("/Content/images/examples/journey-timeline-bg-small.jpg") no-repeat scroll 50% 50% / cover ;
+    overflow: hidden;
+    width: 100%;
+}
+.timelineCallouts .modHead {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-top: 0 none;
+}
+.timelineCallouts .modHead a span {
+    max-width: 90%;
+}
+.timelineCallouts .modContent {
+    padding: 0 1.3% 0 8%;
+}
+.timelineCallouts .tabs {
+    display: none;
+    font-family: "myriad-pro",sans-serif;
+    height: 32px;
+    margin: -88px 4.5% 0 2%;
+    position: relative;
+    z-index: 10;
+}
+.timelineCallouts .tabs::before {
+    background: #231f20 none repeat scroll 0 0;
+    content: " ";
+    height: 3px;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    width: 99%;
+    z-index: -1;
+}
+.timelineCallouts .tabs a {
+    background: #671f2b none repeat scroll 0 0;
+    border: 3px solid #50111a;
+    border-radius: 32px;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: 600;
+    left: 0;
+    margin-left: -16px;
+    padding: 3px 6px 6px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 34px;
+    z-index: 5;
+}
+.timelineCallouts .tabs a:hover, .timelineCallouts .tabs a:focus {
+    color: #fff;
+}
+.timelineCallouts .tabs a + a {
+    left: 33%;
+}
+.timelineCallouts .tabs a + a + a {
+    left: 66%;
+}
+.timelineCallouts .tabs a + a + a + a {
+    left: 99%;
+}
+.timelineCallouts .tabs .indicator {
+    background: #f6e045 none repeat scroll 0 0;
+    border: 4px solid #feeeb4;
+    border-radius: 30px;
+    box-shadow: 0 0 0 10px rgba(246, 218, 64, 0.4);
+    color: #000;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 34px;
+    left: 0;
+    margin-left: -16px;
+    padding: 3px 6px 6px;
+    position: absolute;
+    text-align: center;
+    transition: box-shadow 0.3s ease-out 0s, left 0.8s ease-out 0s;
+    width: 34px;
+    z-index: 6;
+}
+.timelineCallouts .tabs .indicator:hover, .timelineCallouts .tabs .indicator.active {
+    box-shadow: 0 0 0 10px rgba(246, 218, 64, 0.6);
+}
+.timelineCallouts .tabs .indicator.transition {
+    color: #f6e045;
+}
+.timelineCallouts .tabs .indicator::after, .timelineCallouts .tabs .indicator::before {
+    color: #fff;
+    display: none;
+    font-family: "Glyphicons Halflings";
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    position: absolute;
+    top: 8px;
+}
+.timelineCallouts .tabs .indicator::before {
+    content: "";
+    left: -12px;
+}
+.timelineCallouts .tabs .indicator::after {
+    content: "";
+    right: -12px;
+}
+.timelineCallouts .tabs .indicator.hasPrev::before {
+    display: block;
+}
+.timelineCallouts .tabs .indicator.hasNext::after {
+    display: block;
+}
+.timelineCallouts .panels {
+    display: none;
+    height: 296px;
+    left: 0;
+    margin-top: 105px;
+    position: relative;
+    transition: all 0.8s ease-out 0s;
+}
+.timelineCallouts .panel {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    box-shadow: 0 0 0 transparent;
+    color: #fff;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.8s ease-out 0s;
+    width: 100%;
+}
+.lt-ie9 .timelineCallouts .panel {
+}
+.timelineCallouts .panel.active {
+    opacity: 1;
+}
+.lt-ie9 .timelineCallouts .panel.active {
+}
+.timelineCallouts .panel.active + .panel {
+    margin-left: 300px;
+}
+.timelineCallouts .item {
+    display: table;
+    width: 100%;
+}
+.timelineCallouts .item .aside, .timelineCallouts .item .content, .timelineCallouts .item .indicator {
+    display: table-cell;
+    vertical-align: top;
+}
+.timelineCallouts .item .indicator .text {
+    color: #58595b;
+    display: inline-block;
+    font-family: "myriad-pro",sans-serif;
+    font-size: 8.3em;
+    font-weight: 600;
+    line-height: 1.1;
+    padding-right: 25px;
+    position: relative;
+}
+.timelineCallouts .item .indicator .text::after {
+    background: #a9b2b1 none repeat scroll 0 0;
+    content: " ";
+    height: 96%;
+    position: absolute;
+    right: 0;
+    top: 4%;
+    width: 2px;
+}
+.timelineCallouts .item .content {
+    line-height: 1.25;
+    padding: 15px 0 15px 30px;
+    vertical-align: bottom;
+}
+.timelineCallouts .item .content .title {
+    color: #772432;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+.timelineCallouts .item .content .btn {
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+.timelineCallouts .item .content p {
+    color: #000;
+}
+.timelineCallouts .item .aside {
+    border: 0 none;
+    box-shadow: 0 0 0 transparent;
+    display: none;
+    width: 325px;
+}
+.timelineCallouts .item .aside .imageBG {
+    border: 3px solid #782634;
+    border-radius: 170px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 325px;
+    width: 325px;
+}
+@media (min-width: 768px) {
+.timelineCallouts {
+    background: rgba(0, 0, 0, 0) url("/Content/images/examples/journey-timeline-bg.jpg") no-repeat scroll 50% 0 / cover ;
+    height: 395px;
+}
+.timelineCallouts .modHead {
+    position: absolute;
+}
+.timelineCallouts .modHead a span {
+    max-width: 100%;
+}
+.timelineCallouts .tabs {
+    display: block;
+}
+.timelineCallouts .panels {
+    display: block;
+}
+.timelineCallouts .panel + .panel {
+    left: 100%;
+}
+.timelineCallouts .panel + .panel + .panel {
+    left: 200%;
+}
+.timelineCallouts .panel + .panel + .panel + .panel {
+    left: 300%;
+}
+}
+@media (max-width: 991px) {
+.timelineCallouts .item .aside .imageBG {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+}
+}
+@media (min-width: 992px) {
+.timelineCallouts {
+    height: 540px;
+}
+.timelineCallouts .tabs {
+    height: 52px;
+    margin: -88px 4.5% 0 10%;
+}
+.timelineCallouts .tabs::before {
+    height: 4px;
+    margin-top: -2px;
+}
+.timelineCallouts .tabs a {
+    border-radius: 30px;
+    border-width: 6px;
+    box-shadow: 0 0 0 10px rgba(80, 17, 26, 0);
+    font-size: 1.35em;
+    margin-left: -26px;
+    padding: 3px 8px 5px;
+    width: 52px;
+}
+.timelineCallouts .tabs a:hover, .timelineCallouts .tabs a:focus {
+    box-shadow: 0 0 0 10px rgba(80, 17, 26, 0.5);
+}
+.timelineCallouts .tabs .indicator {
+    border-width: 6px;
+    box-shadow: 0 0 0 15px rgba(246, 218, 64, 0.4);
+    font-size: 1.35em;
+    height: 53px;
+    margin-left: -26px;
+    padding: 3px 8px 5px;
+    width: 52px;
+}
+.timelineCallouts .tabs .indicator:hover, .timelineCallouts .tabs .indicator.active {
+    box-shadow: 0 0 0 15px rgba(246, 218, 64, 0.6);
+}
+.timelineCallouts .tabs .indicator::after, .timelineCallouts .tabs .indicator::before {
+    font-size: 12px;
+    top: 14px;
+}
+.timelineCallouts .tabs .indicator::before {
+    content: "";
+    left: -18px;
+}
+.timelineCallouts .tabs .indicator::after {
+    content: "";
+    right: -18px;
+}
+.timelineCallouts .panels {
+    height: 380px;
+    margin-top: 115px;
+}
+.timelineCallouts .item .aside, .timelineCallouts .item .content, .timelineCallouts .item .indicator {
+    vertical-align: middle;
+}
+.timelineCallouts .item .indicator .text {
+    font-size: 12.2em;
+}
+.timelineCallouts .item .indicator .text::after {
+    top: 4%;
+}
+.timelineCallouts .item .content {
+    padding-top: 0;
+}
+.timelineCallouts .item .content .title {
+    font-size: 1.35em;
+    font-weight: normal;
+}
+.timelineCallouts .item .content .btn {
+    font-size: 1em;
+    margin-top: 25px;
+}
+}
+@media (min-width: 1200px) {
+.timelineCallouts {
+    height: 664px;
+}
+.timelineCallouts .panels {
+    height: 480px;
+    margin-top: 115px;
+}
+.timelineCallouts .item {
+    width: 100%;
+}
+.timelineCallouts .item .content {
+    padding: 0 70px 27px 64px;
+}
+.timelineCallouts .item .aside {
+    display: table-cell;
+}
+}
+

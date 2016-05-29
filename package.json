@@ -1,0 +1,29 @@
+{
+  "name": "schoenwasserwerk",
+  "version": "1.0.0",
+  "description": "Layout für Stephanie Kessler",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^2.0.0",
+    "pug": "^2.0.0-alpha6",
+    "run-sequence": "^1.1.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-convert-encoding": "0.0.3",
+    "gulp-jquery": "^1.1.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "jquery": "^2.2.3",
+    "run-sequence": "^1.1.5",
+    "vinyl-ftp": "^0.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tilo Thiele tilo.thiele@hamburg.de",
+  "license": "MIT"
+}
