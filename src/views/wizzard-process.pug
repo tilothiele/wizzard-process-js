@@ -11,30 +11,33 @@ head
 		if (foo) bar(1 + 5)
       
 body
-	div(class=["callouts", "timelineCallouts"])
+	div(class=["callouts", "timelineCallouts"], style="background-image:url('"+wizzardProcess.backgroundImage+"')")
 		div.container
 			div.modHead
 				h2.title
-					span.hidden-xs BIG Title
+					span.hidden-xs= wizzardProcess.tite
 					a(class="visible-xs" href="#")
 			div.modContent
 				div.panels
-					each step in [["Item1 Title", "Item1 Text", "Item1 Link Text", "#item1-link-url", "img/item1-background.jpg", "Item1 Description"], ["Item2 Title", "Item2 Text", "Item2 Link Text", "#item2-link-url", "img/item2-background.jpg", "Item2 Description"]]
+					- var stepNo=0;
+					each step in wizzardProcess.steps
 						div(class=["panel", "active"])
 							div.item
 								div.indicator
-									span.text= step[1]
+									span.text= ++stepNo
 								div.content
-									h3.title= step[0]
-									p= step[0]
-									a(class=["btn", "btn-primary"], href=step[3])= step[2]
+									h3.title= step.title
+									p= step.text
+									a(class=["btn", "btn-primary"], href=step.linkUrl)= step.linkText
 								div.aside
-									div(class="imageBG", style="background-image:url('"+step[4]+")")
-										span.sr-only= step[5]
+									div(class="imageBG", style="background-image:url('"+step.backgroundImage+"')")
+										span.sr-only= step.text
 				div.tabs
-					<a href="#">1</a>
-					<a href="#">2</a>
-					<span class="indicator hasNext">1</span>
+					- var i=0;
+					each step in wizzardProcess.steps
+						- i++;
+						a(href="#")= i
+					span(class=["indicator", "hasNext"]) 1
 
 	script(src="js/jquery.min.js")
 	script window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
