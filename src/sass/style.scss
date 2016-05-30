@@ -1,3 +1,15 @@
+// Rand um den großen Bilderkreis
+$borderColor1: #782634;
+
+// innere Kreise der runden Step-Buttons
+$borderColor2: #671f2b;
+
+// äußere Kreise der runden Step-Buttons
+$borderColor3: #50111a;
+
+
+@mixin bordera($a) { box-shadow: 0 0 0 10px rgba(120, 177, 126, $a) }
+@mixin borderaa($a) { box-shadow: 0 0 0 10px rgba(80, 17, 26, $a) }
 
 body {
   padding-top: 50px;
@@ -38,8 +50,8 @@ body {
     z-index: -1;
 }
 .wizzardprocessCallouts .tabs a {
-    background: #671f2b none repeat scroll 0 0;
-    border: 3px solid #50111a;
+    background: $borderColor2 none repeat scroll 0 0;
+    border: 3px solid $borderColor3;
     border-radius: 32px;
     color: #fff;
     font-size: 0.85em;
@@ -188,7 +200,7 @@ body {
     width: 325px;
 }
 .wizzardprocessCallouts .item .aside .imageBG {
-    border: 3px solid #782634;
+    border: 3px solid $borderColor1;
     border-radius: 170px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     display: block;
@@ -198,7 +210,6 @@ body {
 
 @media (min-width: 768px) {
 .wizzardprocessCallouts {
-    background: rgba(0, 0, 0, 0) url("/Content/images/examples/journey-timeline-bg.jpg") no-repeat scroll 50% 0 / cover ;
     height: 395px;
 }
 .wizzardprocessCallouts .modHead {
@@ -245,14 +256,14 @@ body {
 .wizzardprocessCallouts .tabs a {
     border-radius: 30px;
     border-width: 6px;
-    box-shadow: 0 0 0 10px rgba(80, 17, 26, 0);
+    @include bordera(0);
     font-size: 1.35em;
     margin-left: -26px;
     padding: 3px 8px 5px;
     width: 52px;
 }
 .wizzardprocessCallouts .tabs a:hover, .wizzardprocessCallouts .tabs a:focus {
-    box-shadow: 0 0 0 10px rgba(80, 17, 26, 0.5);
+    @include bordera(0.5);
 }
 .wizzardprocessCallouts .tabs .indicator {
     border-width: 6px;
