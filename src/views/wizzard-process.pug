@@ -11,20 +11,22 @@ head
 		if (foo) bar(1 + 5)
       
 body
-	div(class=["callouts", "timelineCallouts"], style="background-image:url('"+wizzardProcess.backgroundImage+"')")
+	div(class=["callouts", "wizzardprocessCallouts"], style="background-image:url('"+wizzardProcess.backgroundImage+"')")
 		div.container
 			div.modHead
 				h2.title
-					span.hidden-xs= wizzardProcess.tite
+					span.hidden-xs= wizzardProcess.title
 					a(class="visible-xs" href="#")
 			div.modContent
 				div.panels
 					- var stepNo=0;
 					each step in wizzardProcess.steps
+						- stepNo++;
+						- var left = 100*stepNo;
 						div(class=["panel", "active"])
 							div.item
 								div.indicator
-									span.text= ++stepNo
+									span.text= stepNo
 								div.content
 									h3.title= step.title
 									p= step.text
@@ -35,8 +37,9 @@ body
 				div.tabs
 					- var i=0;
 					each step in wizzardProcess.steps
+						- var left = 100.0*i/(wizzardProcess.steps.length-1);
 						- i++;
-						a(href="#")= i
+						a(href="#",  style="left: "+left+"%")= i
 					span(class=["indicator", "hasNext"]) 1
 
 	script(src="js/jquery.min.js")

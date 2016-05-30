@@ -54,19 +54,10 @@ gulp.task('styles', function(){
 });
 
 gulp.task('views', function build() {
-  var options = {
+    var structure = JSON.parse(fs.readFileSync('src/structure/wizzard-process-structure.json', 'utf8'));
+    var options = {
     pretty: true,
-    data: {
-      wizzardProcess: {
-		title: "BIG Title",
-		backgroundImage: "img/wizzard-process-bg.jpg",
-		steps: [ { title: "Item1 Title", text: "Item1 Text", linkText: "Item1 Link Text", linkUrl: "#item1-link-url", backgroundImage: "img/step1-background.png", itemDescritpion: "Item1 Description" },
-                         { title: "Item2 Title", text: "Item2 Text", linkText: "Item2 Link Text", linkUrl: "#item2-link-url", backgroundImage: "img/item2-background.jpg", itemDescription: "Item2 Description" },
-                         { title: "Item3 Title", text: "Item3 Text", linkText: "Item3 Link Text", linkUrl: "#item3-link-url", backgroundImage: "img/item3-background.jpg", itemDescription: "Item3 Description" },
-                         { title: "Item4 Title", text: "Item4 Text", linkText: "Item4 Link Text", linkUrl: "#item4-link-url", backgroundImage: "img/item4-background.jpg", itemDescription: "Item4 Description" }
-			]
-      }
-    }
+    data: structure
   };
   return gulp.src('src/views/**.pug')
     .pipe(watch('src/views/**.pug'))
