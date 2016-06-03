@@ -1,5 +1,6 @@
 {
       "wizzardProcess": {
+		"id": "wp1",
 		"title": "Very BIG Title",
 		"backgroundImage": "img/wizzard-process-bg.jpg",
 		"steps": [ { "title": "Item1 Title", "text": "Item1 Text", "linkText": "Item1 Link Text", "linkUrl": "#item1-link-url", "backgroundImage": "img/step1-background.png", "itemDescritpion": "Item1 Description" },

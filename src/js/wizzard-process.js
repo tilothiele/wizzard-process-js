@@ -21,6 +21,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  
  */
  
+var aclick = function() {
+	alert("xxx");
+};
+
 // Mit jQuery.fn.fadeSlideShow = function(options) definieren wir, dass es sich
 // bei diesem Script um ein jQuery Plugin handelt mit dem Funktionsnamen "fadeSlideShow"
 // Das "options" in den Klammern der Funktion, ermöglicht die Variablen Übergabe des Parameter Arrays des Funktionsaufrufs
@@ -73,12 +77,12 @@ jQuery.fn.fadeSlideShow = function(options) {
                         // Bei dieser If Abfrage wird getestet ob die Variable ActSlide bei 0 angelangt ist, wenn ja wird die Slideshow auf das erste Bild zurückgesetzt
 	    if(ActSlide <= 0){
                                 // Alle Bilder werden wieder eingeblendet und die Slideshow fängt bei Bild 1 bzw vom Dom Index bei Bild 3 wieder an
-		jQslide.fadeIn(settings.speed);
+			jQslide.fadeIn(settings.speed);
                                 // Die ActSlide Variable wird zurückgesetzt auf 3
-		ActSlide = Slides;
-	    }else{
+			ActSlide = Slides;
+	    } else {
                                 // Wenn ActSlides größer als 0 ist wird hier "-1" abgezogen
-		ActSlide = ActSlide - 1;	
+			ActSlide = ActSlide - 1;	
 	    }
 	}, settings.interval);
                 // Nach 5 Sekunden wird diese Funktion erneut ausgeführt
