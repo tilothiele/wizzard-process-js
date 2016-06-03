@@ -81,6 +81,11 @@ gulp.task('copy3', function () {
       .pipe(gulp.dest('dest/img'));
 });
 
+gulp.task('copy4', function () {
+    return gulp.src('src/js/**/*')
+      .pipe(gulp.dest('dest/js'));
+});
+
 gulp.task('default', function(callback) {
-  runSequence('copy1', 'copy2', 'copy3', ['views', 'styles'], callback);
+  runSequence('copy1', 'copy2', 'copy3', 'copy4', ['views', 'styles'], callback);
 });

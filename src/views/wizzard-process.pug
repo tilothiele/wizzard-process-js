@@ -3,12 +3,8 @@ html(lang="de")
 head
 	title Wizzard Process Widget - Playground Prototye
 	mata(http-equiv='X-UA-Compatible', content='IE=edge')
-	link(href="../node_modules/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
-	link(href="../../assets/css/ie10-viewport-bug-workaround.css", rel="stylesheet")
 	link(href="style.css", rel="stylesheet")
-	script(src="../../assets/js/ie-emulation-modes-warning.js")
-	script(type='text/javascript').
-		if (foo) bar(1 + 5)
+	script(src="js/process-wizzard.js")
       
 body
 	div(class=["callouts", "wizzardprocessCallouts"], style="background-image:url('"+wizzardProcess.backgroundImage+"')")
@@ -42,6 +38,25 @@ body
 						a(href="#",  style="left: "+left+"%")= i
 					span(class=["indicator", "hasNext"]) 1
 
-	script(src="js/jquery.min.js")
-	script window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+	script window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 	script(src="js/bootstrap.min.js")
+	script(type='text/javascript').
+		// jQuery = $ - Bei der Funktion jQuery bzw. $ handelt es sich um eine Selections Funktion
+		// um z.B. das komplette HTML Dokument zu selektieren jQuery(document)
+		// Die ready() Funktion sorgt dafür, dass die darin enthaltenen Funktionen erst ausgeführt werden,
+		// wenn der komplette HTML Baum (DOM) geladen wurde
+		jQuery(document).ready(function(){
+		// jQuery('#slideshow') selektiert ein HTML Element mit der id "slideshow"
+		// und wendet die Funktion "fadeSlideShow" darauf an
+		jQuery('#slideshow').fadeSlideShow({
+		// Die Parameter im fadeSlideShow Funktionsaufruf bilden die Option des jQuery Plugins
+		// Diese Optionen sind optional, es wäre auch möglich die Funktion nur so aufzurufen:
+		// jQuery('#slideshow').fadeSlideShow();
+		// Dies setzt allerdings voraus, dass die Standard Optionen für den eigenen Bedarf der Funktion
+		// ausreichen bzw. passen
+				width:640, // Dieser Parameter setzt die Weite der Slideshow fest
+				height:480, // Dieser Parameter setzt die Höhe der Slideshow fest
+				speed: 'slow', // Dieser Parameter setzt die Geschwindigkeit der Animation fest
+				interval:5000 // Dieser Parameter bestimmt in welchem Abstand ein neues Bild angezeigt wird 1000 = 1 Sekunde
+			});
+		});
