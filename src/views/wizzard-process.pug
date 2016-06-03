@@ -4,8 +4,7 @@ head
 	title Wizzard Process Widget - Playground Prototye
 	mata(http-equiv='X-UA-Compatible', content='IE=edge')
 	link(href="style.css", rel="stylesheet")
-	script(src="js/process-wizzard.js")
-      
+
 body
 	div(class=["callouts", "wizzardprocessCallouts"], style="background-image:url('"+wizzardProcess.backgroundImage+"')")
 		div.container
@@ -40,15 +39,16 @@ body
 
 	script window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 	script(src="js/bootstrap.min.js")
+	script(src="js/wizzard-process.js")
 	script(type='text/javascript').
 		// jQuery = $ - Bei der Funktion jQuery bzw. $ handelt es sich um eine Selections Funktion
 		// um z.B. das komplette HTML Dokument zu selektieren jQuery(document)
 		// Die ready() Funktion sorgt dafür, dass die darin enthaltenen Funktionen erst ausgeführt werden,
 		// wenn der komplette HTML Baum (DOM) geladen wurde
 		jQuery(document).ready(function(){
-		// jQuery('#slideshow') selektiert ein HTML Element mit der id "slideshow"
+		// jQuery('div.panel') selektiert ein HTML Element mit der id "slideshow"
 		// und wendet die Funktion "fadeSlideShow" darauf an
-		jQuery('#slideshow').fadeSlideShow({
+		jQuery('div.panel').fadeSlideShow({
 		// Die Parameter im fadeSlideShow Funktionsaufruf bilden die Option des jQuery Plugins
 		// Diese Optionen sind optional, es wäre auch möglich die Funktion nur so aufzurufen:
 		// jQuery('#slideshow').fadeSlideShow();
