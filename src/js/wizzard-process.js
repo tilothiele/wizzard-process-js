@@ -25,6 +25,22 @@ var aclick = function() {
 	alert("xxx");
 };
 
+/*
+		// jQuery('div.panel') selektiert ein HTML Element mit der id "slideshow"
+		// und wendet die Funktion "fadeSlideShow" darauf an
+		jQuery('#wp11 div.panel').fadeSlideShow({
+		// Die Parameter im fadeSlideShow Funktionsaufruf bilden die Option des jQuery Plugins
+		// Diese Optionen sind optional, es wäre auch möglich die Funktion nur so aufzurufen:
+		// jQuery('#slideshow').fadeSlideShow();
+		// Dies setzt allerdings voraus, dass die Standard Optionen für den eigenen Bedarf der Funktion
+		// ausreichen bzw. passen
+				width:640, // Dieser Parameter setzt die Weite der Slideshow fest
+				height:480, // Dieser Parameter setzt die Höhe der Slideshow fest
+				speed: 'slow', // Dieser Parameter setzt die Geschwindigkeit der Animation fest
+				interval:5000 // Dieser Parameter bestimmt in welchem Abstand ein neues Bild angezeigt wird 1000 = 1 Sekunde
+			});
+ */
+ 
 // Mit jQuery.fn.fadeSlideShow = function(options) definieren wir, dass es sich
 // bei diesem Script um ein jQuery Plugin handelt mit dem Funktionsnamen "fadeSlideShow"
 // Das "options" in den Klammern der Funktion, ermöglicht die Variablen Übergabe des Parameter Arrays des Funktionsaufrufs
