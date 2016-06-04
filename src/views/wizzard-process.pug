@@ -20,7 +20,7 @@ body
 					each step in wizzardProcess.steps
 						- stepNo++;
 						- var left = 100*stepNo;
-						div(class=cls, id=wizzardProcess.id+"-step"+stepNo)
+						div(class=cls)
 							div.item
 								div.indicator
 									span.text= stepNo
@@ -37,7 +37,7 @@ body
 					each step in wizzardProcess.steps
 						- var left = 100.0*i/(wizzardProcess.steps.length-1);
 						- i++;
-						a(href="#", id=wizzardProcess.id+"-a"+i, style="left: "+left+"%")= i
+						a(href="#", style="left: "+left+"%")= i
 					span(class=["indicator", "hasNext"]) 1
 
 	script window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
