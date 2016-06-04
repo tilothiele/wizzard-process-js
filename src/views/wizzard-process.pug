@@ -44,10 +44,6 @@ body
 	script(src="js/bootstrap.min.js")
 	script(src="js/wizzard-process.js")
 	script(type='text/javascript').
-		// jQuery = $ - Bei der Funktion jQuery bzw. $ handelt es sich um eine Selections Funktion
-		// um z.B. das komplette HTML Dokument zu selektieren jQuery(document)
-		// Die ready() Funktion sorgt dafür, dass die darin enthaltenen Funktionen erst ausgeführt werden,
-		// wenn der komplette HTML Baum (DOM) geladen wurde
 		jQuery(document).ready(function(){
-			jQuery('div.wizzardprocessCallouts a').click(aclick);
+			jQuery('div.wizzardprocessCallouts div.tabs a').click(wizzardStepClick);
 		});

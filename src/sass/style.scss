@@ -10,6 +10,7 @@ $borderColor3: #50111a;
 
 @mixin bordera($a) { box-shadow: 0 0 0 10px rgba(120, 177, 126, $a) }
 @mixin borderaa($a) { box-shadow: 0 0 0 10px rgba(80, 17, 26, $a) }
+@mixin borderb($a) { box-shadow: 0 0 0 10px rgba(246, 218, 64, $a); }
 
 body {
   padding-top: 50px;
@@ -72,7 +73,7 @@ body {
     background: #f6e045 none repeat scroll 0 0;
     border: 4px solid #feeeb4;
     border-radius: 30px;
-    box-shadow: 0 0 0 10px rgba(246, 218, 64, 0.4);
+    @include borderb(0.4);
     color: #000;
     cursor: pointer;
     font-size: 0.8em;
@@ -88,7 +89,7 @@ body {
     z-index: 6;
 }
 .wizzardprocessCallouts .tabs .indicator:hover, .wizzardprocessCallouts .tabs .indicator.active {
-    box-shadow: 0 0 0 10px rgba(246, 218, 64, 0.6);
+    @include borderb(0.6);
 }
 .wizzardprocessCallouts .tabs .indicator.transition {
     color: #f6e045;
