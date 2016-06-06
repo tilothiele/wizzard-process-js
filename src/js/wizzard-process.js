@@ -16,7 +16,7 @@ var wizzardStepClick = function(evt) {
 		panel.css('left', n*100+"%");
 	});
 	var indicator = jQuery('span.indicator', item);
-	if(idx==null) {
+	if(idx==0) {
 		indicator.removeClass('hasPrev');
 	} else {
 		indicator.addClass('hasPrev');
